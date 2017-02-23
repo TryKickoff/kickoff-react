@@ -1,13 +1,23 @@
-import React from 'react'
+import React, { Children, cloneElement } from 'react'
+import MaterialForm from './MaterialForm'
+import StandardForm from './StandardForm'
 
-const Form = ({ children, horizontal }) => {
+const Form = ({ children, horizontal, material }) => {
   let className = 'form'
   if (horizontal) {
     className += ' form--horizontal'
   }
-  return <form className={className}>
-    {children}
-  </form>
+  const childrenWithProps = Children.map(children, (child) => cloneElement(child, { material }))
+
+  if (material) {
+    return <MaterialForm className={className}>
+      {childrenWithProps}
+    </MaterialForm>
+  } else {
+    return <StandardForm className={className}>
+      {childrenWithProps}
+    </StandardForm>
+  }
 }
 
 module.exports = Form
