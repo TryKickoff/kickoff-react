@@ -17,4 +17,4 @@ const Grid = ({ children, gutter, scaled, stack }) => {
   </div>
 }
 
-module.exports = Grid
+export default Grid

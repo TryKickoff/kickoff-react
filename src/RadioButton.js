@@ -10,4 +10,4 @@ class RadioButton extends Component {
   }
 }
 
-module.exports = RadioButton
+export default RadioButton

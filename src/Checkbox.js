@@ -28,4 +28,4 @@ class Checkbox extends Component {
   }
 }
 
-module.exports = Checkbox
+export default Checkbox

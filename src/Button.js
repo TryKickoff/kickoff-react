@@ -8,4 +8,4 @@ const Button = ({ primary, type, value }) => {
   return <input className={className} type={type} value={value} />
 }
 
-module.exports = Button
+export default Button

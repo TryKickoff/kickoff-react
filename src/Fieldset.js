@@ -4,4 +4,4 @@ const Fieldset = ({ children }) => <fieldset className='form-fieldset'>
   {children}
 </fieldset>
 
-module.exports = Fieldset
+export default Fieldset

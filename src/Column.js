@@ -16,4 +16,4 @@ const Column = ({ centered, children, mid, span }) => {
   </div>
 }
 
-module.exports = Column
+export default Column

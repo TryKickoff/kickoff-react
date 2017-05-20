@@ -4,4 +4,4 @@ const Input = (props) => <div className='form-controlGroup-inputWrapper'>
   <input className='form-input' {...props} />
 </div>
 
-module.exports = Input
+export default Input

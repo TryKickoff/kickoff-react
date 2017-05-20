@@ -10,4 +10,4 @@ const Form = ({ children, horizontal }) => {
   </form>
 }
 
-module.exports = Form
+export default Form

@@ -14,4 +14,4 @@ const Control = ({ children, error, success, warning }) => {
   </div>
 }
 
-module.exports = Control
+export default Control
