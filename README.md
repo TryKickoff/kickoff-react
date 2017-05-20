@@ -1,4 +1,4 @@
-# 🏈⚛️ Kickoff React
+# 🏈⚛️ Kickoff React Components
 ### React components for easy use of the Kickoff framework
 
 ---
