@@ -12,4 +12,4 @@ import Legend from './Legend'
 import RadioButton from './RadioButton'
 import Textarea from './Textarea'
 
-export default { Actions, Button, Checkbox, Column, Control, Fieldset, Form, Grid, Input, Label, Legend, RadioButton, Textarea }
+export { Actions, Button, Checkbox, Column, Control, Fieldset, Form, Grid, Input, Label, Legend, RadioButton, Textarea }
