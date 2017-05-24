@@ -1,6 +1,6 @@
 {
   "name": "@kickoff/react-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "React components for easy use of the Kickoff framework",
   "main": "dist/kickoff-react-components.js",
   "module": "dist/kickoff-react-components.mjs",
