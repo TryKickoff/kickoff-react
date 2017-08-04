@@ -11,6 +11,7 @@ import Input from './Input'
 import Label from './Label'
 import Legend from './Legend'
 import RadioButton from './RadioButton'
+import Select from './Select'
 import Textarea from './Textarea'
 
-export { Actions, Button, Checkbox, Column, Container, Control, Fieldset, Form, Grid, Input, Label, Legend, RadioButton, Textarea }
+export { Actions, Button, Checkbox, Column, Container, Control, Fieldset, Form, Grid, Input, Label, Legend, RadioButton, Select, Textarea }

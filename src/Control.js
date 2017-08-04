@@ -1,6 +1,8 @@
 import React from 'react'
+import Label from './Label'
+import Select from './Select'
 
-const Control = ({ children, error, success, warning }) => {
+const Control = ({ children, error, label, success, warning }) => {
   let className = 'form-controlGroup'
   if (success) {
     className += ' has-success'
@@ -10,6 +12,7 @@ const Control = ({ children, error, success, warning }) => {
     className += ' has-warning'
   }
   return <div className={className}>
+    {label && <Label>{label}</Label>}
     {children}
   </div>
 }
