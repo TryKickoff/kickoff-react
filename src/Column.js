@@ -11,9 +11,7 @@ const Column = ({ centered, children, mid, span }) => {
   if (centered) {
     className += ' g-col--centered'
   }
-  return <div className={className}>
-    {children}
-  </div>
+  return <div className={className}>{children}</div>
 }
 
 export default Column

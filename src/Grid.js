@@ -12,9 +12,7 @@ const Grid = ({ children, gutter, scaled, stack }) => {
   } else if (stack) {
     className += ' g--stack'
   }
-  return <div className={className}>
-    {children}
-  </div>
+  return <div className={className}>{children}</div>
 }
 
 export default Grid

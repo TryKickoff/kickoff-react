@@ -9,9 +9,7 @@ const Container = ({ children, full, narrow, wide }) => {
   } else if (wide) {
     className += ' l.container--wide'
   }
-  return <div className={className}>
-    {children}
-  </div>
+  return <div className={className}>{children}</div>
 }
 
 export default Container

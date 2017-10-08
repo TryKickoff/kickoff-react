@@ -11,10 +11,12 @@ const Control = ({ children, error, label, success, warning }) => {
   } else if (warning) {
     className += ' has-warning'
   }
-  return <div className={className}>
-    {label && <Label>{label}</Label>}
-    {children}
-  </div>
+  return (
+    <div className={className}>
+      {label && <Label>{label}</Label>}
+      {children}
+    </div>
+  )
 }
 
 export default Control

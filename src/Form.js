@@ -5,9 +5,7 @@ const Form = ({ children, horizontal }) => {
   if (horizontal) {
     className += ' form--horizontal'
   }
-  return <form className={className}>
-    {children}
-  </form>
+  return <form className={className}>{children}</form>
 }
 
 export default Form
