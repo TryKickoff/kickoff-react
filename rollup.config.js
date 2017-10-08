@@ -5,11 +5,16 @@ import uglify from 'rollup-plugin-uglify'
 import { minify } from 'uglify-es'
 import gzip from 'rollup-plugin-gzip'
 import filesize from 'rollup-plugin-filesize'
+import fse from 'fs-extra'
 import pkg from './package.json'
 
 const NODE_ENV = process.env.NODE_ENV
 const isProductionBuild = NODE_ENV === 'production'
-const jsFile = `.${NODE_ENV}.js`
+const jsFile =
+  '/kickoff-react-components.' +
+  NODE_ENV +
+  (isProductionBuild ? '.min' : '') +
+  '.js'
 
 const plugins = [
   babel({
@@ -20,6 +25,18 @@ const plugins = [
   isProductionBuild && gzip(),
   filesize()
 ]
+
+const copy = formats => {
+  return {
+    ongenerate: () => {
+      formats.forEach(format => {
+        fse
+          .copy('./index.js', './dist/' + format + '/index.js')
+          .catch(err => {})
+      })
+    }
+  }
+}
 
 export default [
   // browser-friendly UMD build
@@ -32,7 +49,7 @@ export default [
     name: 'KickoffReactComponents',
     output: { file: pkg.browser + jsFile, format: 'umd' },
     sourcemap: isProductionBuild,
-    plugins: [resolve(), commonjs(), ...plugins]
+    plugins: [resolve(), commonjs(), ...plugins, copy(['umd'])]
   },
 
   // CommonJS (for Node) and ES module (for bundlers) build.
@@ -48,6 +65,6 @@ export default [
       { file: pkg.module + jsFile, format: 'es' }
     ],
     sourcemap: isProductionBuild,
-    plugins: plugins
+    plugins: [...plugins, copy(['cjs', 'esm'])]
   }
 ]
